@@ -1,0 +1,6 @@
+<Lookups>
+	<lookupCollection name="dataType">
+		<lookup id="1" code="1" viewOrder="1">String</lookup>
+		<lookup id="2" code="2" viewOrder="2">TimeSpan</lookup>
+	</lookupCollection>
+</Lookups>

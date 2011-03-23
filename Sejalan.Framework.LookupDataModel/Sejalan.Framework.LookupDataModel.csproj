@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{71621BB9-AFD1-4F78-967E-D2A0C5371982}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Sejalan.Framework.LookupDataModel</RootNamespace>
+    <AssemblyName>Sejalan.Framework.LookupDataModel</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="LookupDataModelExceptions.cs" />
+    <Compile Include="LookupDataModelFactory.cs" />
+    <Compile Include="LookupDataModelProviderBase.cs" />
+    <Compile Include="LookupItem.cs" />
+    <Compile Include="LookupItemCollection.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sejalan.Framework.Core\Sejalan.Framework.Core.csproj">
+      <Project>{7DBB4003-1CAD-4818-BA45-C3820A5D0180}</Project>
+      <Name>Sejalan.Framework.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sejalan.Framework.Cache\Sejalan.Framework.Cache.csproj">
+      <Project>{46AC1BC2-9A95-4123-A8EA-2E5F6A775170}</Project>
+      <Name>Sejalan.Framework.Cache</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

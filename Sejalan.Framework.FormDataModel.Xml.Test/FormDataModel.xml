@@ -1,0 +1,8 @@
+
+<forms>
+	<form id="1" name="subripSubtitleForm">
+		<field id="1" name="startTime" dataType="2" fieldLength="0" isRequired="true">Start Time</field>
+		<field id="2" name="endTime" dataType="2" fieldLength="0">End Time</field>
+		<field id="3" name="subtitle" dataType="1" fieldLength="1000">Subtitle</field>
+	</form>
+</forms>

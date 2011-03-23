@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{25EDF873-69EE-4CCD-9A0C-142398F99D01}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Sejalan.Framework.Data.DbLinq.Sqlite.Test</RootNamespace>
+    <AssemblyName>Sejalan.Framework.Data.DbLinq.Sqlite.Test</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="nunit.framework, Version=2.4.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77" />
+    <Reference Include="System.Data.Linq">
+    </Reference>
+    <Reference Include="DbLinq, Version=0.20.0.0, Culture=neutral, PublicKeyToken=61e015a67077348b">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\DbLinq-0.20.1\DbLinq.dll</HintPath>
+    </Reference>
+    <Reference Include="DbLinq.Sqlite, Version=0.20.0.0, Culture=neutral, PublicKeyToken=61e015a67077348b">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\DbLinq-0.20.1\DbLinq.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Data.Sqlite" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Test.cs" />
+    <Compile Include="TestDataContextProvider.cs" />
+    <Compile Include="TestValueObject.cs" />
+    <Compile Include="TextDataContext.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="Sejalan.Framework.Data.DbLinq.Sqlite.Test.dll.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Test.s3db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sejalan.Framework.Core\Sejalan.Framework.Core.csproj">
+      <Project>{7DBB4003-1CAD-4818-BA45-C3820A5D0180}</Project>
+      <Name>Sejalan.Framework.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sejalan.Framework.Data.DbLinq\Sejalan.Framework.Data.DbLinq.csproj">
+      <Project>{8027D4BC-C2D5-46FF-A699-CA0F74E143EA}</Project>
+      <Name>Sejalan.Framework.Data.DbLinq</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
