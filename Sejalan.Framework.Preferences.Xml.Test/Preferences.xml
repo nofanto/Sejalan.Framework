@@ -1,0 +1,6 @@
+<Preferences>
+	<preferenceCollection name="appSetting">
+		<preference id="1" name="1" value="1">preference no 1</preference>
+		<preference id="2" name="2" value="2">preference no 2</preference>
+	</preferenceCollection>
+</Preferences>
