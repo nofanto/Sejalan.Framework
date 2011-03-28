@@ -34,7 +34,7 @@ namespace Sejalan.Framework.Instrumentation.SimpleLog.Test
 		[TestFixtureSetUp()]
 		public void SetUp()
 		{
-			ThreadLocalStorageProviderFactory.Current = new ThreadingThreadLocalStorageProvider();
+			StorageProviderFactory.Current = new ThreadLocalStorageProvider();
 		}
 		
 		[Test()]

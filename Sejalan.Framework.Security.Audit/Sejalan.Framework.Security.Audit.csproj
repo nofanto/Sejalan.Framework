@@ -31,9 +31,24 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Core">
+    </Reference>
+    <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="AuditFactory.cs" />
+    <Compile Include="AuditProviderBase.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\Sejalan.Framework.Core\Sejalan.Framework.Core.csproj">
+      <Project>{7DBB4003-1CAD-4818-BA45-C3820A5D0180}</Project>
+      <Name>Sejalan.Framework.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sejalan.Framework.Security\Sejalan.Framework.Security.csproj">
+      <Project>{17A88870-665A-4C2B-B4BD-FAC1203223A7}</Project>
+      <Name>Sejalan.Framework.Security</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

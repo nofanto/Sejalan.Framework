@@ -33,7 +33,7 @@ namespace Sejalan.Framework.Preferences.Xml.Test
 		[TestFixtureSetUp()]
 		public void SetUp ()
 		{
-			ThreadLocalStorageProviderFactory.Current = new ThreadingThreadLocalStorageProvider ();
+			StorageProviderFactory.Current = new ThreadLocalStorageProvider ();
 		}
 
 		[Test()]
@@ -53,15 +53,15 @@ namespace Sejalan.Framework.Preferences.Xml.Test
 
 			Assert.AreNotEqual (preferences.GetPreferences ("appSetting").Count, 0);
 			Assert.AreEqual (preferences.GetPreferences ("appSetting").Count, 2);
-			Assert.AreEqual (preferences.GetPreferences ("appSetting") ["1"].PreferenceID, "1");
-			Assert.AreEqual (preferences.GetPreferences ("appSetting") ["1"].PreferenceDescription, "preference no 1");
+			Assert.AreEqual (preferences.GetPreferences ("appSetting") ["1"].ID, "1");
+			Assert.AreEqual (preferences.GetPreferences ("appSetting") ["1"].Description, "preference no 1");
 
 			PreferenceItemCollection appSetting = preferences.GetPreferences ("appSetting");
 			PreferenceItem newItem = new PreferenceItem ();
-			newItem.PreferenceID = "3";
-			newItem.PreferenceDescription = "Percentage";
-			newItem.PreferenceName = "3";
-			newItem.PreferenceValue = "3";
+			newItem.ID = "3";
+			newItem.Description = "Percentage";
+			newItem.Name = "3";
+			newItem.Value = "3";
 
 			appSetting.Add (newItem);
 

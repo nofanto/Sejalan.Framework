@@ -20,10 +20,12 @@
 //  License along with this library; if not, write to the Free Software
 //  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 using System;
+using Sejalan.Framework.Security;
+using System.Collections.Generic;
 
 namespace Sejalan.Framework.Preferences
 {
-	public class PreferenceItem
+	public class PreferenceItem : IAuditable, ISecurable
 	{
 		public PreferenceItem ()
 		{
@@ -40,9 +42,8 @@ namespace Sejalan.Framework.Preferences
 
 		
 
-		#region Properties
-
-		public string PreferenceID {
+		
+		public string ID {
 			get {
 				return this._PreferenceID;
 			}
@@ -51,7 +52,7 @@ namespace Sejalan.Framework.Preferences
 			}
 		}
 
-		public string PreferenceName {
+		public string Name {
 			get {
 				return this._PreferenceName;
 			}
@@ -60,7 +61,7 @@ namespace Sejalan.Framework.Preferences
 			}
 		}
 
-		public string PreferenceValue {
+		public string Value {
 			get {
 				return this._PreferenceValue;
 			}
@@ -69,15 +70,17 @@ namespace Sejalan.Framework.Preferences
 			}
 		}
 		
-		public string PreferenceDescription {
+		public string Description {
 			get;
 			set;
 		}
+
 		public string CollectionName {
 			get;
 			set;
 		}
-        #endregion
+        
 	}
+	
 }
 

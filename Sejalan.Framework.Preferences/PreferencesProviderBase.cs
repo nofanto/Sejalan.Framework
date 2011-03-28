@@ -24,6 +24,9 @@ using Sejalan.Framework.Provider;
 using System.Threading;
 using Sejalan.Framework.Cache;
 using System.Collections.Generic;
+using Sejalan.Framework.Security.Authorization;
+using Sejalan.Framework.Security.Audit;
+using Sejalan.Framework.Security;
 
 namespace Sejalan.Framework.Preferences
 {
@@ -35,7 +38,7 @@ namespace Sejalan.Framework.Preferences
 		{
 		}
 
-		public virtual PreferenceItemCollection GetPreferences (string collectionName)
+		protected virtual PreferenceItemCollection GetAllPreferences (string collectionName)
 		{
 			cacheLock.EnterUpgradeableReadLock ();
 			try {
@@ -63,14 +66,33 @@ namespace Sejalan.Framework.Preferences
 				cacheLock.ExitUpgradeableReadLock ();
 			}
 		}
-
+		
+		public abstract PreferenceItemCollection GetPreferences(string collectionName);
+		
 		protected abstract PreferenceItemCollection InitializePreferences (string collectionName);
 
-		public abstract void SavePreferences (PreferenceItemCollection lookups);
+		public abstract void SavePreference (PreferenceItem preference);
+		
+		public abstract void RemovePreference (PreferenceItem preference);
+		
 
 		public CacheProviderBase CacheProvider {
 			get {
 				return ProviderFactory.GetInstance<CacheFactory> (ProviderRepositoryFactory.Instance.Providers [Parameters ["cacheProviderRepositoryName"]]).GetProviders<CacheProviderBase> () [Parameters ["cacheProviderName"]];
+			}
+		}
+		
+		protected AuditProviderBase AuditProvider
+		{
+			get{
+				throw new NotImplementedException();
+			}
+		}
+		
+		protected AuthorizationProvider AuthorizationProvider
+		{
+			get{
+				throw new NotImplementedException();
 			}
 		}
 

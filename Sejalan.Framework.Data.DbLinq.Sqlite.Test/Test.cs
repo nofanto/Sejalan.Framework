@@ -34,7 +34,7 @@ namespace Sejalan.Framework.Data.DbLinq.Sqlite.Test
 		[TestFixtureSetUp()]
 		public void SetUp()
 		{
-			ThreadLocalStorageProviderFactory.Current = new ThreadingThreadLocalStorageProvider();
+			StorageProviderFactory.Current = new ThreadLocalStorageProvider();
 		}
 		
 		[Test()]

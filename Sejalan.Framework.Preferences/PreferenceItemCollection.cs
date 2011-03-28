@@ -33,7 +33,15 @@ namespace Sejalan.Framework.Preferences
 				return _CollectionName;
 			}
 		}
-
+		
+		
+		protected override void InsertItem (int index, PreferenceItem item)
+		{
+			item.CollectionName = _CollectionName;
+			base.InsertItem (index, item);
+		}
+		
+		
 		public PreferenceItemCollection (string collectionName) :base()
 		{
 			_CollectionName = collectionName;
@@ -46,7 +54,7 @@ namespace Sejalan.Framework.Preferences
 			if (String.IsNullOrEmpty (id))
 				throw new ArgumentException ("id is null or empty.", "id");
 			foreach (PreferenceItem item in this.Items) {
-				if (string.Compare (item.PreferenceID, id) == 0)
+				if (string.Compare (item.ID, id) == 0)
 					return item;
 			}
 
@@ -55,7 +63,7 @@ namespace Sejalan.Framework.Preferences
 
 		protected override string GetKeyForItem (PreferenceItem item)
 		{
-			return item.PreferenceName;
+			return item.Name;
 		}
 
 		#endregion

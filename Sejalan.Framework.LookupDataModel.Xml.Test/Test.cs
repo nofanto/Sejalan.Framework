@@ -34,7 +34,7 @@ namespace Sejalan.Framework.LookupDataModel.Xml.Test
 		[TestFixtureSetUp()]
 		public void SetUp()
 		{
-			ThreadLocalStorageProviderFactory.Current = new ThreadingThreadLocalStorageProvider();
+			StorageProviderFactory.Current = new ThreadLocalStorageProvider();
 		}
 		
 		[Test()]

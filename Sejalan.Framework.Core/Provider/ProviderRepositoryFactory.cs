@@ -71,9 +71,9 @@ namespace Sejalan.Framework.Provider
 				m_StaticCacheLock.EnterUpgradeableReadLock();
 				try 
 				{
-					if( ThreadLocalStorageProviderFactory.Current.ContainsItem(providerRepositoryFactory))
+					if( StorageProviderFactory.Current.ContainsItem(providerRepositoryFactory))
 					{
-						return (ProviderRepositoryFactory) ThreadLocalStorageProviderFactory.Current.GetItem(providerRepositoryFactory);
+						return (ProviderRepositoryFactory) StorageProviderFactory.Current.GetItem(providerRepositoryFactory);
 					}
 					else
 					{
@@ -95,7 +95,7 @@ namespace Sejalan.Framework.Provider
 								throw new CoreException(string.Format("A private or protected constructor is missing for '{0}'.", "ProviderRepositoryFactory"));
 				
 							ProviderRepositoryFactory instance = (ProviderRepositoryFactory) constructor.Invoke(null);
-							ThreadLocalStorageProviderFactory.Current.SaveItem(providerRepositoryFactory,instance);
+							StorageProviderFactory.Current.SaveItem(providerRepositoryFactory,instance);
 							return instance;
 	
 						} 

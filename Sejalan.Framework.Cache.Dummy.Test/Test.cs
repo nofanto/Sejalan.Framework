@@ -33,7 +33,7 @@ namespace Sejalan.Framework.Cache.Dummy.Test
 		[TestFixtureSetUp()]
 		public void SetUp()
 		{
-			ThreadLocalStorageProviderFactory.Current = new ThreadingThreadLocalStorageProvider();
+			StorageProviderFactory.Current = new ThreadLocalStorageProvider();
 		}
 		
 		[Test()]

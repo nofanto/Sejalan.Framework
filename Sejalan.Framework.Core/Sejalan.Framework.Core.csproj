@@ -50,9 +50,9 @@
     <Compile Include="Provider\ProviderRepositoryFactory.cs" />
     <Compile Include="Provider\AppConfig\ProviderConfigurationSectionHandler.cs" />
     <Compile Include="Provider\AppConfig\ProviderRepository.cs" />
-    <Compile Include="Utility\ThreadLocalStorageProviderFactory.cs" />
-    <Compile Include="Utility\IThreadLocalStorageProvider.cs" />
-    <Compile Include="Utility\ThreadingThreadLocalStorageProvider.cs" />
+    <Compile Include="Utility\IStorageProvider.cs" />
+    <Compile Include="Utility\ThreadLocalStorageProvider.cs" />
+    <Compile Include="Utility\StorageProviderFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Collection\" />

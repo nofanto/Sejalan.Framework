@@ -64,6 +64,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sejalan.Framework.Preferenc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sejalan.Framework.Preferences.Xml", "Sejalan.Framework.Preferences.Xml\Sejalan.Framework.Preferences.Xml.csproj", "{48CDFF55-3276-4935-B481-0C30347E961D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sejalan.Framework.Preferences.Data.DbLinq.Sqlite", "Sejalan.Framework.Preferences.Data.DbLinq.Sqlite\Sejalan.Framework.Preferences.Data.DbLinq.Sqlite.csproj", "{0F209410-F36A-41B2-8A14-1F9EDABDBDA5}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Security", "Security", "{AE72DFE7-D91C-40CC-804A-FDFE0D727C87}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sejalan.Framework.Security", "Sejalan.Framework.Security\Sejalan.Framework.Security.csproj", "{17A88870-665A-4C2B-B4BD-FAC1203223A7}"
@@ -71,8 +73,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sejalan.Framework.Security.Authentication", "Sejalan.Framework.Security.Authentication\Sejalan.Framework.Security.Authentication.csproj", "{1BBD0F53-4928-4341-B60B-0C02E2351851}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sejalan.Framework.Security.Authorization", "Sejalan.Framework.Security.Authorization\Sejalan.Framework.Security.Authorization.csproj", "{14EB5271-7A19-4FE9-BA22-8C6051951264}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sejalan.Framework.Security.Personalization", "Sejalan.Framework.Security.Personalization\Sejalan.Framework.Security.Personalization.csproj", "{0BD03932-B97C-43F7-91C0-8A546D60D92E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sejalan.Framework.Security.Audit", "Sejalan.Framework.Security.Audit\Sejalan.Framework.Security.Audit.csproj", "{7646DFB4-63AC-4AA2-A0EA-5756B263E38D}"
 EndProject
@@ -89,12 +89,12 @@ Global
 		{0050C55C-7620-4BBF-82D3-98A389DE48AC}.Default|Any CPU.Build.0 = Debug|Any CPU
 		{0050C55C-7620-4BBF-82D3-98A389DE48AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0050C55C-7620-4BBF-82D3-98A389DE48AC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0BD03932-B97C-43F7-91C0-8A546D60D92E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0BD03932-B97C-43F7-91C0-8A546D60D92E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0BD03932-B97C-43F7-91C0-8A546D60D92E}.Default|Any CPU.ActiveCfg = Debug|Any CPU
-		{0BD03932-B97C-43F7-91C0-8A546D60D92E}.Default|Any CPU.Build.0 = Debug|Any CPU
-		{0BD03932-B97C-43F7-91C0-8A546D60D92E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0BD03932-B97C-43F7-91C0-8A546D60D92E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F209410-F36A-41B2-8A14-1F9EDABDBDA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F209410-F36A-41B2-8A14-1F9EDABDBDA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F209410-F36A-41B2-8A14-1F9EDABDBDA5}.Default|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F209410-F36A-41B2-8A14-1F9EDABDBDA5}.Default|Any CPU.Build.0 = Debug|Any CPU
+		{0F209410-F36A-41B2-8A14-1F9EDABDBDA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F209410-F36A-41B2-8A14-1F9EDABDBDA5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{14EB5271-7A19-4FE9-BA22-8C6051951264}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{14EB5271-7A19-4FE9-BA22-8C6051951264}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14EB5271-7A19-4FE9-BA22-8C6051951264}.Default|Any CPU.ActiveCfg = Debug|Any CPU
@@ -260,10 +260,10 @@ Global
 		{6C61C0D8-A981-4C0B-A96D-C54332C610D2} = {C316B9BD-9E84-4B7C-8C5E-13E447D89860}
 		{9D5987FB-3584-4676-BD75-78263C9C796E} = {36D90117-20C0-4B19-9DB4-7730101253AD}
 		{48CDFF55-3276-4935-B481-0C30347E961D} = {36D90117-20C0-4B19-9DB4-7730101253AD}
+		{0F209410-F36A-41B2-8A14-1F9EDABDBDA5} = {36D90117-20C0-4B19-9DB4-7730101253AD}
 		{17A88870-665A-4C2B-B4BD-FAC1203223A7} = {AE72DFE7-D91C-40CC-804A-FDFE0D727C87}
 		{1BBD0F53-4928-4341-B60B-0C02E2351851} = {AE72DFE7-D91C-40CC-804A-FDFE0D727C87}
 		{14EB5271-7A19-4FE9-BA22-8C6051951264} = {AE72DFE7-D91C-40CC-804A-FDFE0D727C87}
-		{0BD03932-B97C-43F7-91C0-8A546D60D92E} = {AE72DFE7-D91C-40CC-804A-FDFE0D727C87}
 		{7646DFB4-63AC-4AA2-A0EA-5756B263E38D} = {AE72DFE7-D91C-40CC-804A-FDFE0D727C87}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution

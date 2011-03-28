@@ -31,7 +31,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Core" />
+    <Reference Include="System.Core">
+    </Reference>
     <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
@@ -51,6 +52,18 @@
     <ProjectReference Include="..\Sejalan.Framework.Cache\Sejalan.Framework.Cache.csproj">
       <Project>{46AC1BC2-9A95-4123-A8EA-2E5F6A775170}</Project>
       <Name>Sejalan.Framework.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sejalan.Framework.Security\Sejalan.Framework.Security.csproj">
+      <Project>{17A88870-665A-4C2B-B4BD-FAC1203223A7}</Project>
+      <Name>Sejalan.Framework.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sejalan.Framework.Security.Audit\Sejalan.Framework.Security.Audit.csproj">
+      <Project>{7646DFB4-63AC-4AA2-A0EA-5756B263E38D}</Project>
+      <Name>Sejalan.Framework.Security.Audit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sejalan.Framework.Security.Authorization\Sejalan.Framework.Security.Authorization.csproj">
+      <Project>{14EB5271-7A19-4FE9-BA22-8C6051951264}</Project>
+      <Name>Sejalan.Framework.Security.Authorization</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

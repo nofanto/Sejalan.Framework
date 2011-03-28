@@ -33,7 +33,7 @@ namespace Sejalan.Framework.Provider.Data.DbLinq.Sqlite.Test
 		[TestFixtureSetUp()]
 		public void SetUp()
 		{
-			ThreadLocalStorageProviderFactory.Current = new ThreadingThreadLocalStorageProvider();
+			StorageProviderFactory.Current = new ThreadLocalStorageProvider();
 			
 			//get lookup configuration from app config.
 			LookupDataModelFactory lookupFactory = ProviderFactory.GetInstance<LookupDataModelFactory>(ProviderRepositoryFactory.Instance.Providers["AppConfig"]);

@@ -61,10 +61,10 @@ namespace Sejalan.Framework.Preferences.Xml
 		protected virtual PreferenceItem InitializePreferenceItem (XmlNode item)
 		{
 			PreferenceItem result = new PreferenceItem ();
-			result.PreferenceID = item.Attributes [idAttributeName].Value;
-			result.PreferenceName = item.Attributes [nameAttributeName].Value;
-			result.PreferenceValue = item.Attributes [valueAttributeName].Value;
-			result.PreferenceDescription = item.InnerText;
+			result.ID = item.Attributes [idAttributeName].Value;
+			result.Name = item.Attributes [nameAttributeName].Value;
+			result.Value = item.Attributes [valueAttributeName].Value;
+			result.Description = item.InnerText;
 
 			return result;
 		}
@@ -88,54 +88,46 @@ namespace Sejalan.Framework.Preferences.Xml
 			return result;
 		}
 
-		public override void SavePreferences (PreferenceItemCollection preferences)
+		public override void SavePreference (PreferenceItem preference)
 		{
 			var root = CurrentXmlPreferences.DocumentElement;
-			var targetCollection = root.SelectSingleNode (String.Format ("preferenceCollection[@name='{0}']", preferences.CollectionName));
+			//Get collection of preference.
+			var targetCollection = root.SelectSingleNode (String.Format ("preferenceCollection[@name='{0}']", preference.CollectionName));
 
 			if (targetCollection == null) {
 				targetCollection = CurrentXmlPreferences.CreateNode (XmlNodeType.Element, "preference", null);
 
 				var nameAttr = CurrentXmlPreferences.CreateAttribute (nameAttributeName);
-				nameAttr.Value = preferences.CollectionName;
+				nameAttr.Value = preference.CollectionName;
 
 				targetCollection.Attributes.Append (nameAttr);
 
 				CurrentXmlPreferences.AppendChild (targetCollection);
-			} else {
-				targetCollection.RemoveAll ();
-				var nameAttr = CurrentXmlPreferences.CreateAttribute (nameAttributeName);
-				nameAttr.Value = preferences.CollectionName;
-				targetCollection.Attributes.Append (nameAttr);
-			}
-
-			foreach (var preference in preferences) {
-				XmlNode newNode = CurrentXmlPreferences.CreateNode (XmlNodeType.Element, "preference", null);
-
-				newNode.InnerText = preference.PreferenceDescription;
-
-				var idAttr = CurrentXmlPreferences.CreateAttribute (idAttributeName);
-				idAttr.Value = preference.PreferenceID;
-
-				var nameAttr = CurrentXmlPreferences.CreateAttribute (nameAttributeName);
-				nameAttr.Value = preference.PreferenceName;
-
-				var valueAttr = CurrentXmlPreferences.CreateAttribute (valueAttributeName);
-				valueAttr.Value = preference.PreferenceValue;
-
-				newNode.Attributes.Append (idAttr);
-				newNode.Attributes.Append (nameAttr);
-				newNode.Attributes.Append (valueAttr);
-
-				targetCollection.AppendChild (newNode);
-			}
-
+			} 
+			
+			//TODO: update preference if any and reset cache
+			
+			
 			CurrentXmlPreferences.Save (XmlFileName);
 		}
 
 		public PreferencesProvider ()
 		{
 		}
+		
+		public override PreferenceItemCollection GetPreferences (string collectionName)
+		{
+			//TODO: implement get preference using cache
+			throw new System.NotImplementedException();
+		}
+		
+		
+		public override void RemovePreference (PreferenceItem preference)
+		{
+			//TODO: implement remove preference and reset cache
+			throw new System.NotImplementedException();
+		}
+		
 	}
 }
 
