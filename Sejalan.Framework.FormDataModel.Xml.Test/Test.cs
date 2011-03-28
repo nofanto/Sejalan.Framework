@@ -25,6 +25,7 @@ using NUnit.Framework;
 using Sejalan.Framework.Provider;
 using Sejalan.Framework.Provider.AppConfig;
 using Sejalan.Framework.Utility;
+using System.Xml;
 namespace Sejalan.Framework.FormDataModel.Xml.Test
 {
 	[TestFixture()]
@@ -61,6 +62,34 @@ namespace Sejalan.Framework.FormDataModel.Xml.Test
 			
 			//add new field
 			Field newField = new Field ();
+			newField.Id = "4";
+			newField.Name="Test";
+			newField.Caption = "Test Caption";
+			newField.DataType = formDataModelProvider.DataTypes[0];
+			newField.FieldLength = 3;
+			
+			currentForm.Fields.Add(newField);
+			formDataModelProvider.SaveForm(currentForm);
+			
+			
+			var xmlDoc = new XmlDocument ();
+			xmlDoc.Load (formDataModelProvider.XmlFileName);
+
+			var dataTypeNode = xmlDoc.DocumentElement.SelectSingleNode (String.Format ("form[@name='{0}']", "subripSubtitleForm"));
+			Assert.AreEqual (dataTypeNode.ChildNodes.Count, 4);
+			Assert.AreEqual (dataTypeNode.ChildNodes [3].Attributes ["name"].Value, "Test");
+
+			
+			//remove field
+			currentForm = formDataModelProvider.GetForm("subripSubtitleForm");
+			currentForm.Fields.Remove("Test");
+			formDataModelProvider.SaveForm(currentForm);
+			
+			xmlDoc = new XmlDocument ();
+			xmlDoc.Load (formDataModelProvider.XmlFileName);
+
+			dataTypeNode = xmlDoc.DocumentElement.SelectSingleNode (String.Format ("form[@name='{0}']", "subripSubtitleForm"));
+			Assert.AreEqual (dataTypeNode.ChildNodes.Count, 3);
 
 		}
 		
